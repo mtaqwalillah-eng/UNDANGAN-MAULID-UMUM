@@ -177,6 +177,7 @@
       z-index: 20;
     }
 
+    /* Lingkaran Pengait / Segel Amplop */
     .royal-wax-seal {
       width: 62px;
       height: 62px;
@@ -188,6 +189,7 @@
       align-items: center;
       justify-content: center;
       transition: transform 0.4s ease, opacity 0.4s ease;
+      overflow: hidden;
     }
 
     .envelope-opening .env-top-flap {
@@ -475,11 +477,13 @@
         <div class="absolute bottom-2 left-2 z-40 text-amber-400/70 text-xs pointer-events-none">❖</div>
         <div class="absolute bottom-2 right-2 z-40 text-amber-400/70 text-xs pointer-events-none">❖</div>
 
+        <!-- Kartu di dalam amplop -->
         <div class="env-inner-card border border-amber-400/30">
           <img src="UNDANGAN MAULID VVIP.png?v=fresh" alt="Kartu Maulid Akbar" class="w-full h-full object-cover">
           <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30 pointer-events-none"></div>
         </div>
 
+        <!-- Lipatan Flap Atas (Tepat 48% Menuju Pusat Amplop) -->
         <div class="env-top-flap flex items-center justify-center overflow-hidden relative">
           <img 
             src="fbebf820c10f22e1b222d929f1682333.jpg?v=fresh" 
@@ -489,6 +493,7 @@
           <div class="absolute inset-0 bg-gradient-to-b from-[#030c08]/95 via-[#071f15]/85 to-[#0b2b20]/60 pointer-events-none"></div>
         </div>
 
+        <!-- Kantong Bawah Amplop -->
         <div class="env-bottom-pocket overflow-hidden relative">
           <img 
             src="fbebf820c10f22e1b222d929f1682333.jpg?v=fresh" 
@@ -499,26 +504,37 @@
           <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/90 to-transparent pointer-events-none z-20"></div>
         </div>
 
+        <!-- ============================================================== -->
+        <!-- ELEMEN PUSAT AMPLOP: TERSUSUN PRESISI DI PERTEMUAN LIPATAN     -->
+        <!-- ============================================================== -->
         <div class="absolute inset-0 z-40 flex flex-col items-center justify-center px-6 pointer-events-none">
           
-          <div class="royal-wax-seal mb-3 pointer-events-auto transform hover:scale-105 transition-transform cursor-pointer" onclick="handleTombolBuka()">
-            <i class="fa-solid fa-crown text-amber-900 text-xl drop-shadow"></i>
+          <!-- 1. LOGO PENGAIT / SEGEL EMAS (TEPAT DI TENGAH LIPATAN KIRI & KANAN) -->
+          <div class="royal-wax-seal mb-3 pointer-events-auto transform hover:scale-105 transition-transform cursor-pointer" onclick="handleTombolBuka()" title="Buka Undangan">
+            <img 
+              src="Cuplikan layar 2026-09-18 200553.png" 
+              onerror="if(!this.dataset.retry){this.dataset.retry='1'; this.src='Cuplikan layar 2026-09-18 200553.jpg';} else if(this.dataset.retry==='1'){this.dataset.retry='2'; this.src='logo.png';}" 
+              alt="Logo MTQL" 
+              class="w-full h-full object-cover rounded-full">
           </div>
 
+          <!-- 2. BADGE JUDUL RESMI -->
           <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/75 backdrop-blur-md border border-amber-500/60 shadow-xl mb-4 pointer-events-auto">
             <span class="text-[10px] tracking-[0.25em] font-extrabold uppercase font-cinzel text-amber-300">
               UNDANGAN MAULID AKBAR
             </span>
           </div>
 
+          <!-- 3. TOMBOL BUKA UNDANGAN -->
           <button onclick="handleTombolBuka()" class="luxury-btn pointer-events-auto w-full max-w-[280px] py-4 px-6 rounded-2xl bg-gradient-to-r from-[#6e1319] via-[#8c1822] to-[#6e1319] text-amber-100 font-cinzel font-bold text-xs tracking-[0.22em] border-2 border-amber-400/80 shadow-2xl flex items-center justify-center gap-3 transition active:scale-95 group">
             <i class="fa-solid fa-envelope-open-text text-amber-300 text-base group-hover:scale-110 transition-transform"></i>
             <span>BUKA UNDANGAN</span>
           </button>
 
+          <!-- 4. KETERANGAN AUDIO SHOLAWAT -->
           <div class="flex items-center justify-center gap-2 pt-3 text-[10px] text-amber-100/90 font-medium drop-shadow pointer-events-auto">
             <i class="fa-solid fa-music text-amber-400 text-xs animate-pulse"></i>
-            <span>Lantunan Mahallul Qiyam - Ustadzah Halimah 'Alaydrus</span>
+            <span>Lantunan Mahallul Qiyam - Ustadzah Halimah Alaydrus</span>
           </div>
 
         </div>
@@ -533,14 +549,14 @@
     <div class="slide-viewport">
       
       <!-- Slide 1: Muqoddimah -->
-      <div id="slide-1" class="page-slide active">
+      <div id="slide-1" class="page-slide">
         <img src="MUQODDIMAH.png?v=fresh" alt="Muqoddimah" class="w-full h-full object-fill">
         <div class="paper-curl-shade"></div>
       </div>
 
-      <!-- Slide 2: Undangan Umum -->
-      <div id="slide-2" class="page-slide">
-        <img src="UNDANGAN.png?v=fresh" alt="Undangan" class="w-full h-full object-fill">
+      <!-- Slide 2: Undangan Maulid (Halaman Pertama Terbuka Langsung) -->
+      <div id="slide-2" class="page-slide active">
+        <img src="UNDANGAN MAULID VVIP.png?v=fresh" alt="Undangan Maulid" class="w-full h-full object-fill">
         <div class="paper-curl-shade"></div>
       </div>
 
@@ -577,12 +593,10 @@
         <div class="paper-curl-shade"></div>
       </div>
 
-      <!-- ============================================================== -->
-      <!-- SLIDE 6: SOSIAL MEDIA & INFAQ (1x KLIK LANGSUNG RESPONSIF)       -->
-      <!-- ============================================================== -->
+      <!-- Slide 6: Sosial Media & Infaq -->
       <div id="slide-6" class="page-slide bg-[#fdfbf7] flex flex-col justify-between overflow-hidden">
         
-        <!-- 1. BILAH SISI KIRI (SPINE SAGE GREEN IDENTIK HALAMAN LAIN) -->
+        <!-- 1. Bilah Sisi Kiri (Spine Sage Green Identik Halaman Lain) -->
         <div class="absolute top-0 left-0 bottom-0 spine-pattern border-r border-[#9ea96e]/50 z-20 flex flex-col justify-between items-center py-2" style="width: 19.2%; bottom: 4.5%;">
           
           <button onclick="kembaliKeCover()" class="mt-1 w-[88%] py-1 px-1 rounded-full bg-[#fbf8f2] border border-[#a2ae72] shadow-sm flex items-center justify-center gap-1 hover:bg-white transition cursor-pointer active:scale-95" title="Kembali ke Cover Depan">
@@ -599,7 +613,7 @@
           <div class="h-4"></div>
         </div>
 
-        <!-- 2. AREA KONTEN KANAN -->
+        <!-- 2. Area Konten Kanan -->
         <div class="absolute top-0 right-0 overflow-hidden flex flex-col justify-between" style="left: 19.2%; bottom: 4.5%;">
           
           <div class="absolute inset-0 pointer-events-none overflow-hidden">
@@ -619,7 +633,7 @@
 
           <div class="relative z-10 flex flex-col justify-between h-full pt-2 pb-2.5 px-3 sm:px-4">
             
-            <!-- KELOMPOK ATAS -->
+            <!-- Kelompok Atas -->
             <div class="flex flex-col space-y-1.5">
               
               <div class="text-center space-y-0.5 pt-0.5">
@@ -638,7 +652,7 @@
                     <i class="fa-brands fa-youtube text-xs"></i>
                   </div>
                   <div class="text-left overflow-hidden">
-                    <p class="text-[7px] text-zinc-500 font-bold uppercase leading-none">YT MTQL</p>
+                    <p class="text-[7px] text-zinc-500 font-bold uppercase leading-none">YouTube 1</p>
                     <p class="text-[9px] font-bold text-zinc-800 truncate group-hover:text-red-600 transition-colors leading-tight">MTQL Official</p>
                   </div>
                 </a>
@@ -648,7 +662,7 @@
                     <i class="fa-brands fa-youtube text-xs"></i>
                   </div>
                   <div class="text-left overflow-hidden">
-                    <p class="text-[7px] text-zinc-500 font-bold uppercase leading-none">YT MTNH</p>
+                    <p class="text-[7px] text-zinc-500 font-bold uppercase leading-none">YouTube 2</p>
                     <p class="text-[9px] font-bold text-zinc-800 truncate group-hover:text-red-600 transition-colors leading-tight">MT Nurul Hasanah</p>
                   </div>
                 </a>
@@ -677,7 +691,7 @@
 
             </div>
 
-            <!-- LOGO KALIGRAFI TENGAH -->
+            <!-- Logo Kaligrafi Muhammad SAW -->
             <div class="my-auto flex flex-col items-center justify-center pointer-events-none py-1">
               <div class="prophet-emblem flex flex-col items-center justify-center">
                 <img 
@@ -688,7 +702,7 @@
               </div>
             </div>
 
-            <!-- KELOMPOK BAWAH -->
+            <!-- Kelompok Bawah (Infaq & Live Streaming) -->
             <div class="flex flex-col space-y-1.5 pt-0.5">
               
               <div class="rounded-xl p-2 bg-gradient-to-br from-[#0c3323] via-[#09261a] to-[#051810] text-amber-100 border border-amber-400/50 shadow-md">
@@ -703,7 +717,7 @@
 
                 <div class="mt-1 p-1 rounded-lg bg-black/40 border border-emerald-500/20 flex items-center justify-between">
                   <div>
-                    <p class="text-[6.5px] text-amber-100/70 uppercase leading-none">a.n Majelis Talim Taqwa Lillah</p>
+                    <p class="text-[6.5px] text-amber-100/70 uppercase leading-none">a.n MT Taqwa Lillah</p>
                     <p class="text-[10px] font-mono font-extrabold text-amber-300 tracking-wider leading-snug">7330572207</p>
                   </div>
                   <button onclick="salinTeks('7330572207', 'Rekening MTQL (7330572207)')" class="px-2 py-0.5 rounded bg-amber-500/25 hover:bg-amber-500/40 text-amber-200 text-[8px] font-bold flex items-center gap-1 border border-amber-400/40 transition active:scale-90 cursor-pointer">
@@ -714,7 +728,7 @@
 
                 <div class="mt-1 p-1 rounded-lg bg-black/40 border border-emerald-500/20 flex items-center justify-between">
                   <div>
-                    <p class="text-[6.5px] text-amber-100/70 uppercase leading-none">a.n Majelis Talim Nurul Hasanah</p>
+                    <p class="text-[6.5px] text-amber-100/70 uppercase leading-none">a.n MT Nurul Hasanah</p>
                     <p class="text-[10px] font-mono font-extrabold text-amber-300 tracking-wider leading-snug">7352733077</p>
                   </div>
                   <button onclick="salinTeks('7352733077', 'Rekening MTNH (7352733077)')" class="px-2 py-0.5 rounded bg-amber-500/25 hover:bg-amber-500/40 text-amber-200 text-[8px] font-bold flex items-center gap-1 border border-amber-400/40 transition active:scale-90 cursor-pointer">
@@ -766,7 +780,7 @@
 
         </div>
 
-        <!-- 3. 6 TAB NAVIGASI CEPAT DI BAGIAN BAWAH -->
+        <!-- 3. 6 Tab Navigasi Bawah -->
         <div class="absolute bottom-0 left-0 right-0 z-20 flex bg-[#cad49e] border-t border-[#9ea96e]/60" style="height: 4.5%;">
           
           <button onclick="pindahSlide(1)" class="w-[16.6%] h-full flex items-center justify-center bg-[#eae3d5] hover:bg-white border-r border-[#baa889] text-[7px] sm:text-[7.5px] font-bold font-cinzel text-[#382d1c] transition cursor-pointer" title="Halaman 1: Muqoddimah">
@@ -800,10 +814,7 @@
 
     </div>
 
-    <!-- ============================================== -->
-    <!-- NAVIGASI SENTUH TRANSPARAN FRAME               -->
-    <!-- ============================================== -->
-    
+    <!-- Navigasi Sentuh Transparan Frame -->
     <button onclick="kembaliKeCover()" class="absolute z-30 cursor-pointer" style="top: 1.2%; left: 2%; width: 32%; height: 3.2%;" title="Kembali ke Cover"></button>
     <button onclick="prevSlide()" class="absolute z-30 cursor-pointer" style="top: 47%; left: 0%; width: 14%; height: 6.5%;" title="Lembar Sebelumnya"></button>
     <button onclick="nextSlide()" class="absolute z-30 cursor-pointer" style="top: 47%; right: 0%; width: 14%; height: 6.5%;" title="Lembar Berikutnya"></button>
@@ -866,7 +877,7 @@
         console.log("Autoplay ditahan browser:", err);
       });
 
-      pindahSlide(1, true);
+      pindahSlide(2, true);
     }
 
     function toggleMusic() {
@@ -901,8 +912,8 @@
       musicIcon.classList.remove('spin-active');
     }
 
-    // Logika Membalik Lembaran Kertas Lemas Melengkung
-    let currentSlide = 1;
+    // Logika Membalik Lembaran Kertas
+    let currentSlide = 2;
     const totalSlides = 6;
 
     function pindahSlide(target, force = false) {
