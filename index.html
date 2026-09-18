@@ -49,9 +49,7 @@
     .wave-bar-2 { animation: soundwave 0.8s infinite ease-in-out 0.2s; }
     .wave-bar-3 { animation: soundwave 1.1s infinite ease-in-out 0.4s; }
 
-    /* ========================================================== */
-    /* ELEMEN KARTU KACA & RADAR FUTURISTIK SLIDE 6               */
-    /* ========================================================== */
+    /* Elemen Kartu Kaca Slide 7 */
     .futuristic-card {
       background: rgba(255, 255, 255, 0.88);
       backdrop-filter: blur(12px);
@@ -88,7 +86,7 @@
       animation: live-glow 2s infinite ease-in-out;
     }
 
-    /* Animasi Pendaran Lembut Logo Kaligrafi Nabi */
+    /* Animasi Kaligrafi */
     @keyframes prophet-halo {
       0%, 100% {
         filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5)) drop-shadow(0 4px 15px rgba(0, 0, 0, 0.3));
@@ -113,9 +111,7 @@
       background-position: 0 0, 11px 11px;
     }
 
-    /* ========================================================== */
-    /* DESAIN & ANIMASI AMPLOP BERGRADASI MASJID (ROYAL ENVELOPE) */
-    /* ========================================================== */
+    /* Desain Amplop Kerajaan */
     .envelope-box {
       perspective: 1600px;
     }
@@ -177,12 +173,12 @@
       z-index: 20;
     }
 
-    /* Lingkaran Pengait / Segel Amplop */
+    /* Lingkaran Pengait Segel Amplop */
     .royal-wax-seal {
       width: 62px;
       height: 62px;
       border-radius: 50%;
-      background: radial-gradient(circle at 35% 35%, #fff1a8 0%, #d4af37 45%, #916e14 85%, #594208 100%);
+      background: #0b1e2a;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.75), 0 0 25px rgba(212, 175, 55, 0.6);
       border: 2px solid #fff5b8;
       display: flex;
@@ -206,9 +202,7 @@
       transform: translateY(-8%) scale(1.03);
     }
 
-    /* ========================================================== */
-    /* SIMULASI BUKU KERTAS LEMAS MELENGKUNG (SOFT 3D PAGE CURL)  */
-    /* ========================================================== */
+    /* Simulasi Halaman Kertas (Page Curl 3D) */
     .slide-viewport {
       position: relative;
       width: 100%;
@@ -412,7 +406,7 @@
 </head>
 <body class="flex items-center justify-center min-h-screen p-0 sm:p-3 overflow-hidden select-none">
 
-  <!-- Audio Pemutar Lantunan Sholawat / Qasidah (Auto Loop) -->
+  <!-- Audio Sholawat -->
   <audio id="audioPlayer" loop preload="auto" playsinline>
     <source src="MAHALLUL QIYAM UHA.MP3" type="audio/mpeg">
     <source src="MAHALLUL%20QIYAM%20UHA.MP3" type="audio/mpeg">
@@ -420,7 +414,7 @@
     <source src="audio.mp3" type="audio/mpeg">
   </audio>
 
-  <!-- HUD Atas: Mini Equalizer & Kontrol Suara -->
+  <!-- HUD Mini Equalizer & Kontrol Suara -->
   <div id="musicHUD" class="fixed top-3 right-3 z-50 flex items-center gap-2 bg-black/70 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-amber-500/50 shadow-2xl transition-all duration-500 opacity-0 pointer-events-none">
     <div class="flex items-end gap-[3px] h-4">
       <span class="w-[2px] bg-amber-400 rounded-full wave-bar-1"></span>
@@ -445,7 +439,7 @@
   <!-- CONTAINER UTAMA -->
   <main class="invitation-frame relative bg-stone-100 sm:rounded-2xl overflow-hidden border border-amber-500/40 flex flex-col justify-between">
 
-    <!-- Kanvas Efek Partikel (Kelopak Mawar & Kilau Bintang) -->
+    <!-- Efek Partikel -->
     <canvas id="fxCanvas"></canvas>
 
     <!-- Petunjuk Swipe Lembaran -->
@@ -456,14 +450,12 @@
       </div>
     </div>
 
-    <!-- ============================================================== -->
-    <!-- COVER AWAL: AMPLOP KERAJAAN BERTEKSTUR MASJID                  -->
-    <!-- ============================================================== -->
+    <!-- COVER AWAL: AMPLOP KERAJAAN BERTEKSTUR MASJID -->
     <div id="gateOverlay" class="absolute inset-0 z-40 bg-[#06140e] flex items-center justify-center p-2.5 sm:p-3.5 transition-all duration-1000 overflow-hidden envelope-box">
       
       <div id="royalEnvelope" class="relative w-full h-full rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.9)] border-2 border-amber-500/40 bg-[#081f16] flex flex-col justify-between">
         
-        <!-- Background Foto Masjid Utama dengan Fallback Chain Otomatis -->
+        <!-- Background Foto Masjid Utama -->
         <img 
           src="fbebf820c10f22e1b222d929f1682333.jpg?v=fresh" 
           onerror="if(!this.dataset.retry){this.dataset.retry='1'; this.src='masjid.jpg';} else if(this.dataset.retry==='1'){this.dataset.retry='2'; this.src='https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?q=80&w=1000&auto=format&fit=crop';}"
@@ -483,7 +475,7 @@
           <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30 pointer-events-none"></div>
         </div>
 
-        <!-- Lipatan Flap Atas (Tepat 48% Menuju Pusat Amplop) -->
+        <!-- Lipatan Atas Amplop -->
         <div class="env-top-flap flex items-center justify-center overflow-hidden relative">
           <img 
             src="fbebf820c10f22e1b222d929f1682333.jpg?v=fresh" 
@@ -504,34 +496,29 @@
           <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/90 to-transparent pointer-events-none z-20"></div>
         </div>
 
-        <!-- ============================================================== -->
-        <!-- ELEMEN PUSAT AMPLOP: TERSUSUN PRESISI DI PERTEMUAN LIPATAN     -->
-        <!-- ============================================================== -->
+        <!-- Elemen Pusat Amplop -->
         <div class="absolute inset-0 z-40 flex flex-col items-center justify-center px-6 pointer-events-none">
           
-          <!-- 1. LOGO PENGAIT / SEGEL EMAS (TEPAT DI TENGAH LIPATAN KIRI & KANAN) -->
+          <!-- LOGO PENGAIT SEPAKET DENGAN LOGO ASLI (MENUTUPI PREV LOGO SECARA PRESISI) -->
           <div class="royal-wax-seal mb-3 pointer-events-auto transform hover:scale-105 transition-transform cursor-pointer" onclick="handleTombolBuka()" title="Buka Undangan">
             <img 
               src="Cuplikan layar 2026-09-18 200553.png" 
-              onerror="if(!this.dataset.retry){this.dataset.retry='1'; this.src='Cuplikan layar 2026-09-18 200553.png';} else if(this.dataset.retry==='1'){this.dataset.retry='2'; this.src='logo.png';}" 
+              onerror="if(!this.dataset.retry){this.dataset.retry='1'; this.src='Cuplikan layar 2026-09-18 200553.jpg';} else if(this.dataset.retry==='1'){this.dataset.retry='2'; this.src='logo.png';}" 
               alt="Logo MTQL" 
               class="w-full h-full object-cover rounded-full">
           </div>
 
-          <!-- 2. BADGE JUDUL RESMI -->
           <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/75 backdrop-blur-md border border-amber-500/60 shadow-xl mb-4 pointer-events-auto">
             <span class="text-[10px] tracking-[0.25em] font-extrabold uppercase font-cinzel text-amber-300">
-              UNDANGAN MAULID AKBAR SATU CINTA
+              UNDANGAN MAULID AKBAR
             </span>
           </div>
 
-          <!-- 3. TOMBOL BUKA UNDANGAN -->
           <button onclick="handleTombolBuka()" class="luxury-btn pointer-events-auto w-full max-w-[280px] py-4 px-6 rounded-2xl bg-gradient-to-r from-[#6e1319] via-[#8c1822] to-[#6e1319] text-amber-100 font-cinzel font-bold text-xs tracking-[0.22em] border-2 border-amber-400/80 shadow-2xl flex items-center justify-center gap-3 transition active:scale-95 group">
             <i class="fa-solid fa-envelope-open-text text-amber-300 text-base group-hover:scale-110 transition-transform"></i>
             <span>BUKA UNDANGAN</span>
           </button>
 
-          <!-- 4. KETERANGAN AUDIO SHOLAWAT -->
           <div class="flex items-center justify-center gap-2 pt-3 text-[10px] text-amber-100/90 font-medium drop-shadow pointer-events-auto">
             <i class="fa-solid fa-music text-amber-400 text-xs animate-pulse"></i>
             <span>Lantunan Mahallul Qiyam - Ustadzah Halimah Alaydrus</span>
@@ -544,28 +531,40 @@
     </div>
 
     <!-- ============================================== -->
-    <!-- SLIDE VIEWPORT (6 HALAMAN FORMAT BUKU LEMBAR)  -->
+    <!-- SLIDE VIEWPORT (7 HALAMAN TERINTEGRASI PENUH)  -->
     <!-- ============================================== -->
     <div class="slide-viewport">
       
-      <!-- Slide 1: Muqoddimah -->
-      <div id="slide-1" class="page-slide">
+      <!-- Slide 1: PREVIEW AMPLOP TAMPILAN PENUH (UNDANGAN MAULID VVIP.png) -->
+      <div id="slide-1" class="page-slide active">
+        <img 
+          src="UNDANGAN MAULID VVIP.png?v=fresh" 
+          onerror="if(!this.dataset.retry){this.dataset.retry='1'; this.src='UNDANGAN.png?v=fresh';}" 
+          alt="Undangan Maulid Preview Penuh" 
+          class="w-full h-full object-fill">
+        <div class="paper-curl-shade"></div>
+      </div>
+
+      <!-- Slide 2: MUQODDIMAH.png -->
+      <div id="slide-2" class="page-slide">
         <img src="MUQODDIMAH.png?v=fresh" alt="Muqoddimah" class="w-full h-full object-fill">
         <div class="paper-curl-shade"></div>
       </div>
 
-      <!-- Slide 2: Undangan Maulid (Halaman Pertama Terbuka Langsung) -->
-      <div id="slide-2" class="page-slide active">
-        <img src="UNDANGAN MAULID VVIP.png?v=fresh" alt="Undangan Maulid" class="w-full h-full object-fill">
+      <!-- Slide 3: UNDANGAN.png (Halaman Undangan Bersih) -->
+      <div id="slide-3" class="page-slide">
+        <img src="UNDANGAN.png?v=fresh" onerror="if(!this.dataset.retry){this.dataset.retry='1'; this.src='UNDANGAN MAULID VVIP.png?v=fresh';}" alt="Undangan" class="w-full h-full object-fill">
         <div class="paper-curl-shade"></div>
       </div>
 
-      <!-- Slide 3: Acara -->
-      <div id="slide-3" class="page-slide">
+      <!-- Slide 4: ACARA.png (Jadwal, Hitung Mundur, dan Peta) -->
+      <div id="slide-4" class="page-slide">
         <img src="ACARA.png?v=fresh" alt="Acara" class="w-full h-full object-fill">
 
+        <!-- Area Sentuh Lokasi Peta At-Tin -->
         <a href="https://maps.app.goo.gl/f7aA17GN3GxNhQ2c6" target="_blank" rel="noopener noreferrer" class="absolute z-30 cursor-pointer rounded-full" style="top: 68.5%; left: 45%; width: 20%; height: 7.5%;" title="Buka Lokasi Masjid Agung At-Tin di Google Maps"></a>
 
+        <!-- Jam Countdown Real-Time -->
         <div class="absolute flex items-center justify-between font-mono font-bold text-base sm:text-lg bg-[#faf7f2] px-1 rounded" style="top: 79.5%; left: 29.5%; width: 57%; height: 4.8%;">
           <span id="cdDays" class="w-1/4 text-center text-stone-950">00</span>
           <span class="text-stone-400">:</span>
@@ -578,25 +577,26 @@
         <div class="paper-curl-shade"></div>
       </div>
 
-      <!-- Slide 4: Ketentuan -->
-      <div id="slide-4" class="page-slide">
-        <img src="KETENTUAN UMUM.png?v=fresh" alt="Ketentuan" class="w-full h-full object-fill">
+      <!-- Slide 5: KETENTUAN.png -->
+      <div id="slide-5" class="page-slide">
+        <img src="KETENTUAN UMUM.png" alt="Ketentuan" class="w-full h-full object-fill">
 
+        <!-- Tautan Lokasi MTQL & MTNH -->
         <a href="https://maps.app.goo.gl/ghPvMXjdz2fY6jxw5" target="_blank" rel="noopener noreferrer" class="absolute z-30 cursor-pointer block" style="top: 24.5%; left: 14%; width: 58%; height: 4%;" title="Buka Lokasi MTQL di Google Maps"></a>
         <a href="https://maps.app.goo.gl/YVGDmGG5R5RF7Tg66" target="_blank" rel="noopener noreferrer" class="absolute z-30 cursor-pointer block" style="top: 28.5%; left: 14%; width: 60%; height: 4%;" title="Buka Lokasi MTNH di Google Maps"></a>
         <div class="paper-curl-shade"></div>
       </div>
 
-      <!-- Slide 5: Ikhtitam -->
-      <div id="slide-5" class="page-slide">
+      <!-- Slide 6: IKHTITAM.png -->
+      <div id="slide-6" class="page-slide">
         <img src="IKHTITAM.png?v=fresh" alt="Ikhtitam" class="w-full h-full object-fill">
         <div class="paper-curl-shade"></div>
       </div>
 
-      <!-- Slide 6: Sosial Media & Infaq -->
-      <div id="slide-6" class="page-slide bg-[#fdfbf7] flex flex-col justify-between overflow-hidden">
+      <!-- Slide 7: MEDIA SOSIAL & INFAQ (Dengan Latar Masjid Nabawi & Kaligrafi) -->
+      <div id="slide-7" class="page-slide bg-[#fdfbf7] flex flex-col justify-between overflow-hidden">
         
-        <!-- 1. Bilah Sisi Kiri (Spine Sage Green Identik Halaman Lain) -->
+        <!-- Bilah Sisi Kiri (Spine Hijau Alami) -->
         <div class="absolute top-0 left-0 bottom-0 spine-pattern border-r border-[#9ea96e]/50 z-20 flex flex-col justify-between items-center py-2" style="width: 19.2%; bottom: 4.5%;">
           
           <button onclick="kembaliKeCover()" class="mt-1 w-[88%] py-1 px-1 rounded-full bg-[#fbf8f2] border border-[#a2ae72] shadow-sm flex items-center justify-center gap-1 hover:bg-white transition cursor-pointer active:scale-95" title="Kembali ke Cover Depan">
@@ -606,14 +606,14 @@
             <span class="text-[6.5px] font-bold font-cinzel text-[#2d3a1c] tracking-tight uppercase hidden sm:inline">BERANDA</span>
           </button>
 
-          <button onclick="prevSlide()" class="w-10 h-10 rounded-full flex items-center justify-center text-[#283a16] hover:bg-[#b5c086]/50 transition cursor-pointer active:scale-90 group" title="Kembali ke Halaman Sebelumnya">
+          <button onclick="prevSlide()" class="w-10 h-10 rounded-full flex items-center justify-center text-[#283a16] hover:bg-[#b5c086]/50 transition cursor-pointer active:scale-90 group" title="Kembali ke Halaman Sebelumnya (Ikhtitam)">
             <i class="fa-solid fa-reply text-xl group-hover:-translate-x-1 transition-transform"></i>
           </button>
 
           <div class="h-4"></div>
         </div>
 
-        <!-- 2. Area Konten Kanan -->
+        <!-- Area Konten Slide 7 -->
         <div class="absolute top-0 right-0 overflow-hidden flex flex-col justify-between" style="left: 19.2%; bottom: 4.5%;">
           
           <div class="absolute inset-0 pointer-events-none overflow-hidden">
@@ -633,7 +633,6 @@
 
           <div class="relative z-10 flex flex-col justify-between h-full pt-2 pb-2.5 px-3 sm:px-4">
             
-            <!-- Kelompok Atas -->
             <div class="flex flex-col space-y-1.5">
               
               <div class="text-center space-y-0.5 pt-0.5">
@@ -691,7 +690,7 @@
 
             </div>
 
-            <!-- Logo Kaligrafi Muhammad SAW -->
+            <!-- Kaligrafi Muhammad SAW -->
             <div class="my-auto flex flex-col items-center justify-center pointer-events-none py-1">
               <div class="prophet-emblem flex flex-col items-center justify-center">
                 <img 
@@ -702,7 +701,7 @@
               </div>
             </div>
 
-            <!-- Kelompok Bawah (Infaq & Live Streaming) -->
+            <!-- Infaq & Live Streaming -->
             <div class="flex flex-col space-y-1.5 pt-0.5">
               
               <div class="rounded-xl p-2 bg-gradient-to-br from-[#0c3323] via-[#09261a] to-[#051810] text-amber-100 border border-amber-400/50 shadow-md">
@@ -780,33 +779,14 @@
 
         </div>
 
-        <!-- 3. 6 Tab Navigasi Bawah -->
+        <!-- 6 Tab Bawah Khusus Slide 7 -->
         <div class="absolute bottom-0 left-0 right-0 z-20 flex bg-[#cad49e] border-t border-[#9ea96e]/60" style="height: 4.5%;">
-          
-          <button onclick="pindahSlide(1)" class="w-[16.6%] h-full flex items-center justify-center bg-[#eae3d5] hover:bg-white border-r border-[#baa889] text-[7px] sm:text-[7.5px] font-bold font-cinzel text-[#382d1c] transition cursor-pointer" title="Halaman 1: Muqoddimah">
-            MUQODDIMAH
-          </button>
-          
-          <button onclick="pindahSlide(2)" class="w-[16.6%] h-full flex items-center justify-center bg-[#eae3d5] hover:bg-white border-r border-[#baa889] text-[7px] sm:text-[7.5px] font-bold font-cinzel text-[#382d1c] transition cursor-pointer" title="Halaman 2: Undangan">
-            UNDANGAN
-          </button>
-          
-          <button onclick="pindahSlide(3)" class="w-[16.6%] h-full flex items-center justify-center bg-[#eae3d5] hover:bg-white border-r border-[#baa889] text-[7px] sm:text-[7.5px] font-bold font-cinzel text-[#382d1c] transition cursor-pointer" title="Halaman 3: Acara">
-            ACARA
-          </button>
-          
-          <button onclick="pindahSlide(4)" class="w-[16.6%] h-full flex items-center justify-center bg-[#eae3d5] hover:bg-white border-r border-[#baa889] text-[7px] sm:text-[7.5px] font-bold font-cinzel text-[#382d1c] transition cursor-pointer" title="Halaman 4: Ketentuan">
-            KETENTUAN
-          </button>
-          
-          <button onclick="pindahSlide(5)" class="w-[16.6%] h-full flex items-center justify-center bg-[#eae3d5] hover:bg-white border-r border-[#baa889] text-[7px] sm:text-[7.5px] font-bold font-cinzel text-[#382d1c] transition cursor-pointer" title="Halaman 5: Ikhtitam">
-            IKHTITAM
-          </button>
-          
-          <button onclick="pindahSlide(6)" class="w-[17%] h-full flex items-center justify-center bg-[#fffdf9] border-t-2 border-amber-600 text-[7px] sm:text-[7.5px] font-black font-cinzel text-amber-900 shadow-sm cursor-pointer" title="Halaman 6: Sosial Media">
-            SOSIAL MEDIA
-          </button>
-
+          <button onclick="pindahSlide(2)" class="w-[16.6%] h-full flex items-center justify-center bg-[#eae3d5] hover:bg-white border-r border-[#baa889] text-[7px] sm:text-[7.5px] font-bold font-cinzel text-[#382d1c] transition cursor-pointer">MUQODDIMAH</button>
+          <button onclick="pindahSlide(3)" class="w-[16.6%] h-full flex items-center justify-center bg-[#eae3d5] hover:bg-white border-r border-[#baa889] text-[7px] sm:text-[7.5px] font-bold font-cinzel text-[#382d1c] transition cursor-pointer">UNDANGAN</button>
+          <button onclick="pindahSlide(4)" class="w-[16.6%] h-full flex items-center justify-center bg-[#eae3d5] hover:bg-white border-r border-[#baa889] text-[7px] sm:text-[7.5px] font-bold font-cinzel text-[#382d1c] transition cursor-pointer">ACARA</button>
+          <button onclick="pindahSlide(5)" class="w-[16.6%] h-full flex items-center justify-center bg-[#eae3d5] hover:bg-white border-r border-[#baa889] text-[7px] sm:text-[7.5px] font-bold font-cinzel text-[#382d1c] transition cursor-pointer">KETENTUAN</button>
+          <button onclick="pindahSlide(6)" class="w-[16.6%] h-full flex items-center justify-center bg-[#eae3d5] hover:bg-white border-r border-[#baa889] text-[7px] sm:text-[7.5px] font-bold font-cinzel text-[#382d1c] transition cursor-pointer">IKHTITAM</button>
+          <button onclick="pindahSlide(7)" class="w-[17%] h-full flex items-center justify-center bg-[#fffdf9] border-t-2 border-amber-600 text-[7px] sm:text-[7.5px] font-black font-cinzel text-amber-900 shadow-sm cursor-pointer">SOSIAL MEDIA</button>
         </div>
 
         <div class="paper-curl-shade"></div>
@@ -814,18 +794,27 @@
 
     </div>
 
-    <!-- Navigasi Sentuh Transparan Frame -->
-    <button onclick="kembaliKeCover()" class="absolute z-30 cursor-pointer" style="top: 1.2%; left: 2%; width: 32%; height: 3.2%;" title="Kembali ke Cover"></button>
-    <button onclick="prevSlide()" class="absolute z-30 cursor-pointer" style="top: 47%; left: 0%; width: 14%; height: 6.5%;" title="Lembar Sebelumnya"></button>
-    <button onclick="nextSlide()" class="absolute z-30 cursor-pointer" style="top: 47%; right: 0%; width: 14%; height: 6.5%;" title="Lembar Berikutnya"></button>
+    <!-- ============================================================== -->
+    <!-- SISTEM NAVIGASI ASLI: AREA SENTUH TRANSPARAN FRAME UTAMA       -->
+    <!-- ============================================================== -->
+    
+    <!-- Tombol Beranda Kiri Atas (Menutupi Tulisan Asli "KEMBALI KE LAMAN UTAMA") -->
+    <button onclick="kembaliKeCover()" class="absolute z-30 cursor-pointer bg-transparent" style="top: 1.2%; left: 2%; width: 34%; height: 3.5%;" title="Kembali ke Cover"></button>
+    
+    <!-- Panah Kiri (Menutupi Gambar Asli Panah Hijau Kiri) -->
+    <button onclick="prevSlide()" class="absolute z-30 cursor-pointer bg-transparent" style="top: 45%; left: 0%; width: 14%; height: 8.5%;" title="Lembar Sebelumnya"></button>
+    
+    <!-- Panah Kanan (Menutupi Gambar Asli Panah Merah Kanan) -->
+    <button onclick="nextSlide()" class="absolute z-30 cursor-pointer bg-transparent" style="top: 45%; right: 0%; width: 14%; height: 8.5%;" title="Lembar Berikutnya"></button>
 
+    <!-- 6 Tab Navigasi Bawah Transparan (Menutupi Gambar Asli Tab Bawah) -->
     <div class="absolute bottom-0 left-0 right-0 z-30 flex pointer-events-auto" style="height: 4.5%;">
-      <button onclick="pindahSlide(1)" class="w-[16.6%] h-full cursor-pointer bg-transparent" title="Tab Muqoddimah"></button>
-      <button onclick="pindahSlide(2)" class="w-[16.6%] h-full cursor-pointer bg-transparent" title="Tab Undangan"></button>
-      <button onclick="pindahSlide(3)" class="w-[16.6%] h-full cursor-pointer bg-transparent" title="Tab Acara"></button>
-      <button onclick="pindahSlide(4)" class="w-[16.6%] h-full cursor-pointer bg-transparent" title="Tab Ketentuan"></button>
-      <button onclick="pindahSlide(5)" class="w-[16.6%] h-full cursor-pointer bg-transparent" title="Tab Ikhtitam"></button>
-      <button onclick="pindahSlide(6)" class="w-[17%] h-full cursor-pointer bg-transparent" title="Tab Sosial Media"></button>
+      <button onclick="pindahSlide(2)" class="w-[16.6%] h-full cursor-pointer bg-transparent" title="Tab Muqoddimah"></button>
+      <button onclick="pindahSlide(3)" class="w-[16.6%] h-full cursor-pointer bg-transparent" title="Tab Undangan"></button>
+      <button onclick="pindahSlide(4)" class="w-[16.6%] h-full cursor-pointer bg-transparent" title="Tab Acara"></button>
+      <button onclick="pindahSlide(5)" class="w-[16.6%] h-full cursor-pointer bg-transparent" title="Tab Ketentuan"></button>
+      <button onclick="pindahSlide(6)" class="w-[16.6%] h-full cursor-pointer bg-transparent" title="Tab Ikhtitam"></button>
+      <button onclick="pindahSlide(7)" class="w-[17%] h-full cursor-pointer bg-transparent" title="Tab Sosial Media"></button>
     </div>
 
   </main>
@@ -877,7 +866,8 @@
         console.log("Autoplay ditahan browser:", err);
       });
 
-      pindahSlide(2, true);
+      // Buka langsung ke Slide 1 (Halaman Preview Amplop Tampilan Penuh)
+      pindahSlide(1, true);
     }
 
     function toggleMusic() {
@@ -912,9 +902,9 @@
       musicIcon.classList.remove('spin-active');
     }
 
-    // Logika Membalik Lembaran Kertas
-    let currentSlide = 2;
-    const totalSlides = 6;
+    // Logika Pembalik Lembaran Kertas Lemas 3D (Total 7 Slide Terintegrasi)
+    let currentSlide = 1;
+    const totalSlides = 7;
 
     function pindahSlide(target, force = false) {
       if ((target === currentSlide || isPageTurning) && !force) return;
@@ -971,7 +961,6 @@
       pindahSlide(prev);
     }
 
-    // Salin Rekening
     function salinTeks(teks, label) {
       navigator.clipboard.writeText(teks).then(() => {
         showToast(`${label} berhasil disalin!`);
@@ -1015,7 +1004,7 @@
     setInterval(updateCountdown, 1000);
     updateCountdown();
 
-    // Dukungan Sentuh Layar Geser (Swipe HP)
+    // Dukungan Usap Layar Sentuh HP (Swipe Gesture)
     let touchStartX = 0;
     let touchEndX = 0;
 
